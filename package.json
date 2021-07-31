@@ -1,0 +1,46 @@
+{
+  "name": "mega-merge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mega merge demo",
+  "author": "Stephen Anwar <stephen.anwar@gmail.com>",
+  "sideEffects": false,
+  "scripts": {
+    "test": "npx jest",
+    "go": "npx ts-node src/index.ts"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^4.3.6",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/lodash": "^4.14.171",
+    "@types/node": "^14.17.6",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**"
+    ],
+    "testMatch": [
+      "**/*.spec.ts",
+      "**/*.test.ts"
+    ]
+  }
+}
