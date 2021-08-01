@@ -8,3 +8,7 @@ export type Company = {
   catalog: CatalogItem[]
   suppliers: Supplier[]
 }
+
+export type CompanyDataSource = {
+  load: (companyName: string) => Promise<Company>
+}

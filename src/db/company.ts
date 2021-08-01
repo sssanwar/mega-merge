@@ -1,14 +1,12 @@
 import { Barcode } from '../models/barcode'
 import { CatalogItem } from '../models/catalog'
-import { Company } from '../models/company'
+import { Company, CompanyDataSource } from '../models/company'
 import { toProducts } from '../models/product'
 import { Supplier } from '../models/supplier'
 import { Csv } from '../utils/csv'
 
-export type CompanyDb = { load: (companyName: string) => Promise<Company> }
-
 export namespace CompanyDb {
-  export const create = (inputDir: string): CompanyDb => {
+  export const create = (inputDir: string): CompanyDataSource => {
     const load = async (companyName: string): Promise<Company> => {
       const [barcodes, catalog, suppliers] = await Promise.all([
         Csv.read<Barcode>(`${inputDir}/barcodes${companyName}.csv`),

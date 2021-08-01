@@ -1,7 +1,6 @@
 import { intersection } from 'lodash'
-import { CompanyDb } from '../db/company'
 import { SourcedCatalogItem } from '../models/catalog'
-import { Company } from '../models/company'
+import { Company, CompanyDataSource } from '../models/company'
 
 const toSourcedCatalogItem = (productKey: string, company: Company): SourcedCatalogItem => {
   const SKU = company.products[productKey].SKU
@@ -33,9 +32,9 @@ const merge = (companyA: Company, companyB: Company): SourcedCatalogItem[] => {
   return merged
 }
 
-export const MergeCatalog = (companyDb: CompanyDb) => {
+export const MergeCatalog = (companyDS: CompanyDataSource) => {
   return async (companyNameA: string, companyNameB: string) => {
-    const [companyA, companyB] = await Promise.all([companyNameA, companyNameB].map(n => companyDb.load(n)))
+    const [companyA, companyB] = await Promise.all([companyNameA, companyNameB].map(n => companyDS.load(n)))
     return merge(companyA, companyB)
   }
 }
