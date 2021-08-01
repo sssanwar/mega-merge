@@ -10,8 +10,9 @@ This code has been tested on Node 14 (LTS) only.
 
 - Install Node 14 (with npm)
 
-## Run
+## Instructions
 
-1. Type `npm install` to install dependencies
-2. Type `npm run test` to run unit tests
-3. Type `npm run go` to run the program
+1. Clone this repo and enter the directory
+2. Type `npm install` to install dependencies
+3. Type `npm run test` to run unit tests
+4. Type `npm run go` to run the program
