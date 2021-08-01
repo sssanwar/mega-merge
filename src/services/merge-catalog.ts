@@ -15,7 +15,7 @@ const merge = (companyA: Company, companyB: Company): SourcedCatalogItem[] => {
   // add catalog from company A first
   Object.keys(companyA.products).forEach(pkA => merged.push(toSourcedCatalogItem(pkA, companyA)))
 
-  // add catalog from company B that has barcodes intersecting with barcodes from company A
+  // add catalog from company B that does not have barcodes intersecting with barcodes from company A
   for (const pkB of Object.keys(companyB.products)) {
     let hasIntersection = false
 
